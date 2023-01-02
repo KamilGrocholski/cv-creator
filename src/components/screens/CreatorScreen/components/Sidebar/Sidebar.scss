@@ -1,0 +1,26 @@
+@use '../../../../../styles/abstracts' as *;
+@use '../../../../../styles/base' as *;
+
+.sidebar {
+    @include box;
+    width: 24rem;
+}
+
+.sidebar-sections-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-section-element {
+    display: flex;
+    flex-direction: row;
+    transition: all 0.2s linear;
+    font-size: 1.1rem;
+    cursor: pointer;
+    &:hover {
+        color: $green
+    }
+    &:first-child {
+        margin-right: 1rem
+    }
+}

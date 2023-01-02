@@ -1,0 +1,77 @@
+@use './abstracts' as *;
+@use './base' as *;
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    appearance: none;
+    text-decoration: none;
+    text-align: center;
+}
+
+input {
+    border: none;
+    outline: none;
+}
+
+html {
+    background-color: $gray;
+    color: $white;
+    font-size: 14px;
+    @media (min-width: 768px) {
+        font-size: 16px;
+    }
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Tahoma", "Roboto", "Oxygen", "Verdana", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.logo {
+    text-align: center;
+    display: flex;  
+    justify-content: center;
+    color: $accent;
+    font-size: 2rem;
+    &:hover {
+        color: $accent;
+    }
+}
+
+.progress {
+  transform-origin: left;
+  & > * {
+    transform: scaleX(0);
+  }
+}
+.progress-bar-animation {
+  @extend .progress;
+  & > * {
+    animation: progress 1.5s ease-in-out forwards;
+  }
+}
+
+.social-icon {
+  color: white;
+  padding-left: 5px;
+  padding-right: 5px;
+  transition: all 0.8s;
+  margin: 4px;
+  &:hover {
+    color: black;
+    padding-left: 5px;
+    padding-right: 5px;
+    transition: all 0.8s;
+    margin: 4px;
+  }
+}

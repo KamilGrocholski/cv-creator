@@ -1,0 +1,14 @@
+@use '../../../../../styles/abstracts' as *;
+@use '../../../../../styles/base' as *;
+
+.forms {
+    @include box;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    div {
+        margin-bottom: 1.5rem;
+    }
+}

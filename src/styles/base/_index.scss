@@ -1,0 +1,46 @@
+@use '../abstracts' as *;
+
+@mixin btn {
+    cursor: pointer;
+    border-radius: 0.1rem;
+    padding: 0.25rem 0.5rem;
+    transition: all 0.4s ease-out;
+}
+
+@each $name, $color in $colors {
+    .btn-#{$name} {
+        &-outline {
+            background-color: $lightGray;
+            border: 1px solid $color;
+            color: $color;
+            @include btn;
+            &:hover {
+                background-color: $color;
+                border: 1px solid $lightGray;
+                color: $lightGray;
+            }
+        }
+
+        &-filled {
+            background-color: $color;
+            border: 1px solid $lightGray;
+            color: $lightGray;
+            @include btn;
+            &:hover {
+                background-color: $lightGray;
+                border: 1px solid $color;
+                color: $color;
+            }
+        }
+    }
+}
+
+@mixin box {
+    background-color: $lightGray;
+    padding: 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    * {
+        margin: 0 1rem;
+    }
+}

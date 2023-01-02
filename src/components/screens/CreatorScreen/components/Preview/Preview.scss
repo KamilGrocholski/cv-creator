@@ -1,0 +1,14 @@
+@use '../../../../../styles/abstracts' as *;
+@use '../../../../../styles/base' as *;
+
+.preview {
+    background-color: $gray;
+    padding: 3rem 3rem;
+    width: 100%;
+}
+
+.preview-document {
+    background-color: $white;
+    color: $black;
+    height: 100%;
+}

@@ -1,0 +1,12 @@
+@use '../../../../../styles/abstracts' as *;
+@use '../../../../../styles/base' as *;
+
+.creator-header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: $lightGray;
+    height: 4rem;
+    padding-left: 4rem;
+}

@@ -1,0 +1,17 @@
+@use '../../../../../styles/abstracts' as *;
+@use '../HomeFooter/HomeFooter.scss' as hf;
+
+.home-main {
+    height: calc(100vh - hf.$home-footer-height);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    div {
+        width: 15%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 5rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
