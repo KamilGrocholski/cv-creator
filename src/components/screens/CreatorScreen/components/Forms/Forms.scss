@@ -1,14 +1,27 @@
 @use '../../../../../styles/abstracts' as *;
 @use '../../../../../styles/base' as *;
+@use '../Header/Header' as * ;
 
 .forms {
     @include box;
+    overflow-y: scroll;
+    height: calc(100vh - $creator-header-height);
 }
 
 .form {
     display: flex;
     flex-direction: column;
+    button {
+        margin-bottom: 1rem;    
+    }
     div {
         margin-bottom: 1.5rem;
     }
+}
+
+.form-many-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
 }

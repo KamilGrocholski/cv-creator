@@ -1,3 +1,4 @@
+import React from "react"
 import { SECTIONS } from "../../../../../../constants/CV_CREATOR"
 import { useCvStore } from "../../../../../../store/cv-store"
 
@@ -19,7 +20,7 @@ export const SectionsList = () => {
 
 const SectionSingle: React.FC<{
     name: string
-    image: string
+    image: React.ReactNode
     onClick: () => void
     isActive: boolean
 }> = ({

@@ -3,10 +3,11 @@ $lightGray: #121217;
 $gray: #161619;
 $white: #ffffff;
 $green: #22d7a6;
+$red: #91002b;
 
 $border: #202530;
 $input: #181820;
-$placeholder: #c0c5ce;
+$placeholder: #757575e3;
 $background: #14171d;
 
 $accent: $green;
@@ -17,5 +18,6 @@ $colors: (
     'lightGray': #121217,
     'gray': #161619,
     'white': #ffffff,
-    'green': #22d7a6
+    'green': #22d7a6,
+    'red': $red
 );

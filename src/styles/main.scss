@@ -15,9 +15,14 @@ a {
     text-align: center;
 }
 
-input {
+input,
+textarea {
     border: none;
     outline: none;
+}
+
+textarea {
+  resize: none;
 }
 
 html {
@@ -31,7 +36,6 @@ html {
 }
 
 body {
-    margin: 0;
     font-family: "Tahoma", "Roboto", "Oxygen", "Verdana", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -73,5 +77,16 @@ body {
     padding-right: 5px;
     transition: all 0.8s;
     margin: 4px;
+  }
+}
+
+.icon {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+@each $name, $color in $colors {
+  .text-#{$name} {
+    color: $color
   }
 }

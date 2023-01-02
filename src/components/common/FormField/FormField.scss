@@ -18,7 +18,33 @@
         border-bottom: 1px solid $white;
         transition: all 0.2s ease-in-out;
         &::placeholder {
-            color: $placeholder
+            color: $placeholder;
+        }
+        &:focus {
+            border-bottom: 1px solid $green;
+        }
+    }
+}
+
+.form-field-text-area {
+    display: flex;
+    flex-direction: column;
+    label {
+        color: $white;
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+    textarea {
+        background-color: $lightGray;
+        color: $white;
+        min-height: 10rem;
+        font-size: 1.1rem;
+        padding: 0.5rem 0 0.5rem 0;
+        caret-color: $green;
+        border-bottom: 1px solid $white;
+        transition: all 0.2s ease-in-out;
+        &::placeholder {
+            color: $placeholder;
         }
         &:focus {
             border-bottom: 1px solid $green;

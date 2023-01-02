@@ -1,12 +1,13 @@
 import { useCvStore } from '../../../../../store/cv-store'
 import { CredentialsForm } from './components/CredentialsForm'
 import { EducationForm } from './components/EducationForm'
+import { ProjectsForm } from './components/ProjectsForm'
 import { SkillsForm } from './components/SkillsForm'
 import './Forms.scss'
 
 export const Forms = () => {
     return (
-        <div className='forms'>
+        <div className='forms' >
             <SelectedForm />
         </div>
     )
@@ -18,5 +19,6 @@ const SelectedForm: React.FC = () => {
     if (currentSection === 'CREDENTIALS') return <CredentialsForm />
     if (currentSection === 'SKILLS') return <SkillsForm />
     if (currentSection === 'EDUCATION') return <EducationForm />
+    if (currentSection === 'PROJECTS') return <ProjectsForm />
     return <></>
 }

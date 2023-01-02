@@ -1,6 +1,8 @@
 import { useSkillsStore } from "../../../../../../store/skills-store"
 import { Skill } from "../../../../../../types/cv"
 import { FormField } from "../../../../../common/FormField"
+import { Icons } from "../../../../../common/Icons"
+import { ScrollToEndComponent } from "../../../../../common/ScrollToEndComponent"
 
 export const SkillsForm = () => {
     const skills = useSkillsStore(state => state.skills)
@@ -9,16 +11,23 @@ export const SkillsForm = () => {
     } = useSkillsStore()
 
     return (
-        <div>
-            {skills.map((skill, i) => (
-                <SkillFormCard
-                    key={i}
-                    index={i}
-                    skill={skill}
-                />
-            ))}
-            <button onClick={() => add()}>Dodaj</button>
-        </div>
+        <ScrollToEndComponent
+            listWithScroll={(scrollToEnd) => (
+                <>
+                    {skills.map((skill, i) => (
+                        <SkillFormCard
+                            key={i}
+                            index={i}
+                            skill={skill}
+                        />
+                    ))}
+                    <button className='text-green btn-green-outline' onClick={() => {
+                        add()
+                        scrollToEnd()
+                    }}>{Icons.Add}</button>
+                </>
+            )}
+        />
     )
 }
 
@@ -29,7 +38,7 @@ interface SkillFormCard {
 
 const SkillFormCard: React.FC<SkillFormCard> = ({
     skill,
-    index
+    index,
 }) => {
     const {
         update,
@@ -50,9 +59,14 @@ const SkillFormCard: React.FC<SkillFormCard> = ({
         })
     }
 
+    const handleRemove = (e: React.FormEvent) => {
+        e.preventDefault()
+        remove(index)
+    }
+
     return (
         <form className='form'>
-            <button onClick={() => remove(index)}>Usun</button>
+            <button onClick={handleRemove} className='text-red btn-red-outline'>{Icons.Trash}</button>
             <FormField
                 label='Nazwa'
                 value={skill.name ?? ''}

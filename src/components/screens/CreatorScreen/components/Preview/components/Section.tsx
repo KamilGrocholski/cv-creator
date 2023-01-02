@@ -1,3 +1,5 @@
+import { usePreviewSettingsStore } from "../../../../../../store/preview-settings-store"
+
 export const Section: React.FC<{
   title?: string
   children: JSX.Element | JSX.Element[]
@@ -5,10 +7,15 @@ export const Section: React.FC<{
   title,
   children
 }) => {
+    const { headers, accent } = usePreviewSettingsStore()
+
     return (
       <section>
         {title ?
-          <span>{title}</span> : null}
+          <span style={{
+            fontSize: headers.size,
+            color: accent
+          }}>{title}</span> : null}
         {children}
       </section>
     )

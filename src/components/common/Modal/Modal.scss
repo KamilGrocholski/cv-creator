@@ -1,0 +1,19 @@
+@use '../../../styles/abstracts' as *;
+@use '../../../styles/base' as *;
+
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.61);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.modal {
+    background-color: $lightGray;
+}
+
+.modal-close-btn {
+    color: $red;
+}
