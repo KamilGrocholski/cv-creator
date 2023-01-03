@@ -16,5 +16,9 @@ export const SECTIONS = {
     PROJECTS: {
         name: 'Projekty',
         image: Icons.Education
+    },
+    CLAUSE: {
+        name: 'Klauzula CV',
+        image: Icons.Education
     }
 } as const

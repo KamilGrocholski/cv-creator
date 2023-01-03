@@ -1,6 +1,6 @@
+import { View, Text } from "@react-pdf/renderer"
 import { useCredentialsStore } from "../../../../../../store/credentials-store"
 import { usePreviewSettingsStore } from "../../../../../../store/preview-settings-store"
-import { Section } from "./Section"
 
 export const CredentialsPreview = () => {
     const name = useCredentialsStore(state => state.name)
@@ -12,11 +12,10 @@ export const CredentialsPreview = () => {
     const { text, accent } = usePreviewSettingsStore()
 
     return (
-        <Section>
-            <div><span>{name} {surname}</span></div>
-            <div>email <span>{email}</span></div>
-            <div><span>{address}</span></div>
-            <div><span>{phone}</span></div>
-        </Section>
+        <View style={{
+            backgroundColor: 'blue'
+        }}>
+            x
+        </View>
     )
 }

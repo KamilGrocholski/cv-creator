@@ -1,19 +1,17 @@
+import { View, Text, StyleSheet } from "@react-pdf/renderer"
 import { useSkillsStore } from "../../../../../../store/skills-store"
 import { Skill } from "../../../../../../types/cv"
-import { Section } from "./Section"
+import { styles } from "../Preview"
 
 export const SkillsPreview: React.FC = () => {
     const skills = useSkillsStore(state => state.skills)
 
     return (
-        <Section title='Umiejętności'>
+        <View>
             {skills.map((skill, i) => (
-                <SkillCard
-                    key={i}
-                    skill={skill}
-                />
+                <SkillCard key={i} skill={skill} />
             ))}
-        </Section>
+        </View>
     )
 }
 
@@ -25,8 +23,8 @@ const SkillCard: React.FC<SkillCardProps> = ({
     skill
 }) => {
     return (
-        <div>
-            <div>{JSON.stringify(skill)}</div>
-        </div>
+        <View>
+            xd
+        </View>
     )
 }

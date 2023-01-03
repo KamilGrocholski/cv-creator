@@ -7,7 +7,6 @@ import {
 } from 'react-router-dom'
 
 import { HomeScreen, CreatorScreen } from './components/screens'
-import { ThemeProvider } from './context/ThemeContext'
 
 const router = createBrowserRouter([
   {
@@ -22,8 +21,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <ThemeProvider>
-      <RouterProvider router={router} />
-    </ThemeProvider>
+    <RouterProvider router={router} />
   </React.StrictMode>
 )

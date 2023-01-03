@@ -1,20 +1,20 @@
+import { View, Text } from "@react-pdf/renderer"
 import React from "react"
 import { useEducationStore } from "../../../../../../store/education-store"
 import { Education } from "../../../../../../types/cv"
-import { Section } from "./Section"
 
 export const EducationPreview = () => {
     const educationList = useEducationStore(state => state.educationList)
 
     return (
-        <Section title='Wykształcenie'>
+        <View>
             {educationList.map((education, i) => (
                 <EducationCard
                     key={i}
                     education={education}
                 />
             ))}
-        </Section>
+        </View>
     )
 }
 
@@ -27,6 +27,6 @@ const EducationCard: React.FC<EducationCardProps> = ({
 }) => {
 
     return (
-        <div>{JSON.stringify(education)}</div>
+        <View>xd</View>
     )
 }

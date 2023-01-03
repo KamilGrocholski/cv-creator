@@ -1,4 +1,5 @@
 import { useCvStore } from '../../../../../store/cv-store'
+import { ClauseForm } from './components/ClauseForm'
 import { CredentialsForm } from './components/CredentialsForm'
 import { EducationForm } from './components/EducationForm'
 import { ProjectsForm } from './components/ProjectsForm'
@@ -20,5 +21,6 @@ const SelectedForm: React.FC = () => {
     if (currentSection === 'SKILLS') return <SkillsForm />
     if (currentSection === 'EDUCATION') return <EducationForm />
     if (currentSection === 'PROJECTS') return <ProjectsForm />
+    if (currentSection === 'CLAUSE') return <ClauseForm />
     return <></>
 }
