@@ -6,9 +6,7 @@ import { ScrollToEndComponent } from "../../../../../common/ScrollToEndComponent
 
 export const SkillsForm = () => {
     const skills = useSkillsStore(state => state.skills)
-    const {
-        add
-    } = useSkillsStore()
+    const add = useSkillsStore(state => state.add)
 
     return (
         <ScrollToEndComponent
@@ -40,10 +38,8 @@ const SkillFormCard: React.FC<SkillFormCard> = ({
     skill,
     index,
 }) => {
-    const {
-        update,
-        remove
-    } = useSkillsStore()
+    const update = useSkillsStore(state => state.update)
+    const remove = useSkillsStore(state => state.remove)
 
     const handleUpdateName = (e: React.ChangeEvent<HTMLInputElement>) => {
         update(index, {

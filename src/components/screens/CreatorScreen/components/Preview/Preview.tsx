@@ -1,56 +1,20 @@
-import React, { useRef, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { CredentialsPreview } from "./components/CredentialsPreview"
 import { EducationPreview } from "./components/EducationPreview"
 import { SkillsPreview } from "./components/SkillsPreview"
-import jsPDF from 'jspdf';
 import './Preview.scss'
 import { ClausePreview } from "./components/ClausePreview";
-import { Page, Text, View, Document, StyleSheet, PDFDownloadLink } from './reactPdf';
-
+import jsPDF from "jspdf"
 import { saveAs } from 'file-saver';
-import ReactPDF, { pdf, PDFViewer } from '@react-pdf/renderer';
-
-// Create styles
-export const styles = StyleSheet.create({
-    page: {
-        display: 'flex',
-        flexDirection: 'column',
-        backgroundColor: '#E4E4E4',
-        width: '100%',
-        height: '100%',
-        color: 'black'
-    },
-})
-
-const CV = () => (
-    <Document>
-        <Page size="A4" style={styles.page}>
-            <CredentialsPreview />
-
-            xd
-        </Page>
-    </Document>
-)
-
-const generatePdfDocument = async () => {
-    const blob = await pdf((
-        <CV />
-    )).toBlob();
-    saveAs(blob, 'nazwa');
-};
+import { useCredentialsStore } from "../../../../../store/credentials-store";
 
 export const Preview = () => {
 
     return (
-        <>
-            <div>
-                <CV />
-                <PDFDownloadLink document={<CV />} fileName='d.pdf'>
-                    s
-                </PDFDownloadLink>
-                <button onClick={() => generatePdfDocument()}>Pobierz</button>
-            </div>
-        </>
+        <div>
+            <div></div>
+            <button>Pobierz</button>
+        </div>
     )
 }
 

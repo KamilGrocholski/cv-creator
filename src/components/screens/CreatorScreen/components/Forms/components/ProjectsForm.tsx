@@ -6,9 +6,7 @@ import { ScrollToEndComponent } from "../../../../../common/ScrollToEndComponent
 
 export const ProjectsForm = () => {
     const projects = useProjectsStore(state => state.projects)
-    const {
-        add
-    } = useProjectsStore()
+    const add = useProjectsStore(state => state.add)
 
     return (
         <ScrollToEndComponent listWithScroll={(scrollToEnd) => (
@@ -38,10 +36,8 @@ const ProjectFormCard: React.FC<ProjectFormCardProps> = ({
     project,
     index
 }) => {
-    const {
-        remove,
-        update
-    } = useProjectsStore()
+    const remove = useProjectsStore(state => state.remove)
+    const update = useProjectsStore(state => state.update)
 
     const handleUpdateName = (e: React.ChangeEvent<HTMLInputElement>) => {
         update(index, {

@@ -6,9 +6,7 @@ import { ScrollToEndComponent } from "../../../../../common/ScrollToEndComponent
 
 export const EducationForm = () => {
     const educationList = useEducationStore(state => state.educationList)
-    const {
-        add
-    } = useEducationStore()
+    const add = useEducationStore(state => state.add)
 
     return (
         <ScrollToEndComponent listWithScroll={(scrollToEnd) => (
@@ -38,10 +36,8 @@ const EducationFormCard: React.FC<EducationFormCardProps> = ({
     education,
     index
 }) => {
-    const {
-        remove,
-        update
-    } = useEducationStore()
+    const remove = useEducationStore(state => state.remove)
+    const update = useEducationStore(state => state.update)
 
     const handleUpdateInstitution = (e: React.ChangeEvent<HTMLInputElement>) => {
         update(index, {

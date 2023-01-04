@@ -39,6 +39,12 @@ export interface Project extends TimePeriod {
     url?: string
 }
 
+export interface Job extends TimePeriod {
+    position?: string
+    description?: string
+    summary?: string
+}
+
 export interface CV {
     credentials: Credentials
     links: Link[]

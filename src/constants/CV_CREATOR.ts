@@ -5,6 +5,10 @@ export const SECTIONS = {
         name: 'Dane osobowe',
         image: Icons.Person
     },
+    JOBS: {
+        name: 'Praca',
+        image: Icons.Work
+    },
     SKILLS: {
         name: 'Umiejętności',
         image: Icons.Skill 
@@ -15,10 +19,10 @@ export const SECTIONS = {
     },
     PROJECTS: {
         name: 'Projekty',
-        image: Icons.Education
+        image: Icons.Project
     },
     CLAUSE: {
         name: 'Klauzula CV',
-        image: Icons.Education
+        image: Icons.Clause
     }
 } as const

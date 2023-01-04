@@ -9,13 +9,11 @@ export const CredentialsForm = () => {
     const phone = useCredentialsStore(state => state.phone)
     const address = useCredentialsStore(state => state.address)
 
-    const {
-        setName,
-        setSurname,
-        setEmail,
-        setPhone,
-        setAddress
-    } = useCredentialsStore()
+    const setName = useCredentialsStore(state => state.setName)
+    const setSurname = useCredentialsStore(state => state.setSurname)
+    const setEmail = useCredentialsStore(state => state.setEmail)
+    const setPhone = useCredentialsStore(state => state.setPhone)
+    const setAddress = useCredentialsStore(state => state.setAddress)
 
     return (
         <form className='form'>
